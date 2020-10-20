@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #routes for user
   get "/users", to: "users#index"
   get "/users/:id", to: "users#show"
+  post "/login", to:"users#login"
 
    #routes for quote
    get "/quotes", to: "quotes#index"
