@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :authorized, only: [:keep_logged_in]
+
     def index 
         users = User.all
         render json: users
@@ -23,6 +25,11 @@ class UsersController < ApplicationController
         else
             render json: {error_message:"Incorrect Username or Password", status:400}
         end
+    end
+
+    def keep_logged_in
+        byebug
+        puts "HIT ME BABY ONE MORE TIME"
     end
 
     def create

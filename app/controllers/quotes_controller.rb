@@ -9,4 +9,8 @@ class QuotesController < ApplicationController
         quote = Quote.find(params[:id])
         render json: quote, status: 200
     end
+
+    def create
+        byebug
+    end
 end
