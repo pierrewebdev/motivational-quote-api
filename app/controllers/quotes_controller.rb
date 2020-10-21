@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
     def index
+        byebug
         quotes = Quote.all
         render json: quotes
     end

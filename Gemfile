@@ -44,3 +44,7 @@ gem 'activerecord_reset_pk_sequence'
 
 #gem for serializing to make a json api
 gem 'active_model_serializers'
+
+#gem to help you make JWTs
+
+gem "jwt"
