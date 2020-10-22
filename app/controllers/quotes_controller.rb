@@ -1,6 +1,7 @@
 class QuotesController < ApplicationController
+    before_action :authorized, only: [:create,:delete,:update]
+
     def index
-        byebug
         quotes = Quote.all
         render json: quotes
     end
@@ -11,6 +12,24 @@ class QuotesController < ApplicationController
     end
 
     def create
-        byebug
+       new_quote = @user.quotes.create(quote_params)
+       render json: new_quote
+    end
+
+    def update
+        #logic
+    end
+
+    def delete
+        quoteToDelete = Quote.find(params[:id])
+        quoteToDelete.destroy
+        
+        render json: quoteToDelete
+    end
+
+    private
+
+    def quote_params
+        params.permit(:content,:author)
     end
 end

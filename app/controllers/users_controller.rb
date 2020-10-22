@@ -28,8 +28,12 @@ class UsersController < ApplicationController
     end
 
     def keep_logged_in
-        byebug
-        puts "HIT ME BABY ONE MORE TIME"
+        #note we have access to user because that is what was originally used as the data to encode in the token
+        user_token = encode_token({user_id:@user.id})
+        render json: {
+            user: UserSerializer.new(@user),
+            token:user_token
+        }
     end
 
     def create

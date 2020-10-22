@@ -15,4 +15,6 @@ Rails.application.routes.draw do
    get "/quotes", to: "quotes#index"
    get "/quotes/:id", to: "quotes#show"
    post "quotes", to: "quotes#create"
+   patch "quotes/:id", to: "quotes#update"
+   delete "quotes/:id", to: "quotes#delete"
 end
