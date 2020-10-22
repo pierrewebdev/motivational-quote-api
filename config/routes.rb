@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show"
   post "/login", to:"users#login"
   post "/users", to: "users#create"
+  patch "users/:id", to: "users#update"
 
    #routes for quote
    get "/quotes", to: "quotes#index"

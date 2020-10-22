@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:keep_logged_in]
+    before_action :authorized, only: [:keep_logged_in,:update]
 
     def index 
         users = User.all
@@ -52,6 +52,18 @@ class UsersController < ApplicationController
         end
         
 
+    end
+
+    def update
+        #will reuse register params here because it the hash being sent to db has all the same keys
+        @user.update(
+            :first_name => registerParams[:firstName],
+            :last_name => registerParams[:lastName],
+            :username => registerParams[:username],
+            :age => registerParams[:age],
+        )
+
+        render json:@user
     end
 
     private
