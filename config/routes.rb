@@ -18,4 +18,9 @@ Rails.application.routes.draw do
    post "quotes", to: "quotes#create"
    patch "quotes/:id", to: "quotes#update"
    delete "quotes/:id", to: "quotes#delete"
+
+   #routes for favorite
+   get "/favorites", to: "favorites#index"
+   post "favorites", to: "favorites#create"
+   delete "favorites/:id", to: "favorites#delete"
 end

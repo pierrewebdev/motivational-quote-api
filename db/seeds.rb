@@ -8,8 +8,8 @@
 
 #A link to a quote api, need to call it a few times
 require "csv"
-# Favorite.delete_all
-# Favorite.reset_pk_sequence
+Favorite.delete_all
+Favorite.reset_pk_sequence
 Quote.delete_all
 Quote.reset_pk_sequence
 User.delete_all
